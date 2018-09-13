@@ -6,9 +6,11 @@ import android.arch.persistence.room.RoomDatabase
 import android.content.Context
 import android.icu.text.IDNA
 import com.example.ruslanio.uiwatcher.db.dao.InfoDAO
+import com.example.ruslanio.uiwatcher.db.dao.TouchInfoDAO
 import com.example.ruslanio.uiwatcher.db.model.ActivityUseInfo
+import com.example.ruslanio.uiwatcher.db.model.TouchInfo
 
-@Database(entities = arrayOf(ActivityUseInfo::class), version = 1)
+@Database(entities = arrayOf(ActivityUseInfo::class, TouchInfo::class), version = 1)
 abstract class MainDatabase : RoomDatabase() {
 
     companion object {
@@ -20,4 +22,7 @@ abstract class MainDatabase : RoomDatabase() {
     }
 
     abstract fun infoDao() : InfoDAO
+
+    abstract fun touchInfoDao() : TouchInfoDAO
+
 }

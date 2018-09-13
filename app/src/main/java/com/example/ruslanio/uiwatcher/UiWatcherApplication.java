@@ -8,11 +8,12 @@ public class UiWatcherApplication extends Application {
 
     private ActivityLifecycleCallbacks activityLifecycleCallbacks;
 
+
+    /*If you are overriding this method, you need to call super.OnCreate()*/
     @Override
     public void onCreate() {
         super.onCreate();
         activityLifecycleCallbacks = new UiWatcherActivityCallbacks(this);
-        startWatching(true);
     }
 
     public boolean isWatching () {
